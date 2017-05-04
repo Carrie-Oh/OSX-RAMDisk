@@ -215,14 +215,14 @@ move_itunes_cache()
 # fixme - what if the version is not 14?
 move_idea_cache()
 {
-    if [ -d "/Applications/IntelliJ IDEA 14.app" ]; then
-        if user_response ${MSG_PROMPT_FOUND} 'IntelliJ IDEA 14'${MSG_MOVE_CACHE} ; then
-            close_app "IntelliJ Idea 14"
+    if [ -d "/Applications/IntelliJ IDEA.app" ]; then
+        if user_response ${MSG_PROMPT_FOUND} 'IntelliJ IDEA'${MSG_MOVE_CACHE} ; then
+            close_app "IntelliJ Idea"
             # make a backup of config - will need it when uninstalling
-            cp -f /Applications/IntelliJ\ IDEA\ 14.app/Contents/bin/idea.properties /Applications/IntelliJ\ IDEA\ 14.app/Contents/bin/idea.properties.back
+            cp -f /Applications/IntelliJ\ IDEA.app/Contents/bin/idea.properties /Applications/IntelliJ\ IDEA.app/Contents/bin/idea.properties.back
             # Idea will create those dirs
-            echo "idea.system.path=${USERRAMDISK}/Idea" >> /Applications/IntelliJ\ IDEA\ 14.app/Contents/bin/idea.properties
-            echo "idea.log.path=${USERRAMDISK}/Idea/logs" >> /Applications/IntelliJ\ IDEA\ 14.app/Contents/bin/idea.properties
+            echo "idea.system.path=${USERRAMDISK}/Idea" >> /Applications/IntelliJ\ IDEA.app/Contents/bin/idea.properties
+            echo "idea.log.path=${USERRAMDISK}/Idea/logs" >> /Applications/IntelliJ\ IDEA.app/Contents/bin/idea.properties
             echo "Moved IntelliJ cache."
         fi
     fi
